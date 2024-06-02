@@ -1,19 +1,314 @@
-<html><head>
-    <title>Index of Large Engagement Networks</title>
-   </head>
-   <body>
-  <h1>Index of Large Engagement Networks</h1>
-    <table>
-     <tbody><tr><th valign="top"><img src="" alt=""></th><th><a href="?C=N;O=D">Name</a></th><th><a href="?C=M;O=A">Last modified</a></th><th><a href="?C=S;O=A">Size</a></th><th><a href="?C=D;O=A">Description</a></th></tr>
-     <tr><th colspan="5"><hr></th></tr>
-  <tr><td valign="top"><img src="./icons/back.gif" alt="[PARENTDIR]"></td><td><a href="Encoder.zip">Parent Directory</a></td><td>&nbsp;</td><td align="right">  - </td><td>&nbsp;</td></tr>
-  <tr><td valign="top"><img src="./icons/tar.gif" alt="[   ]"></td><td><a href="Encoder.tar.gz">Encoder.zip</a></td><td align="right">2024-03-01 11:12  </td><td align="right">37.8G</td><td align="right"> Graph data with encoded author description and tweet text </td></tr>
-  <tr><td valign="top"><img src="./icons/tar.gif" alt="[   ]"></td><td><a href="GraphData.tar.gz">GraphData.zip</a></td><td align="right">2024-03-01 11:13  </td><td align="right">3.7G</td><td align="right"> Original graph data with detail information</td></tr>
-  <tr><td valign="top"><img src="./icons/tar.gif" alt="[   ]"></td><td><a href="SmallEncoder.tar.gz">SmallEncoder.zip</a></td><td align="right">2024-03-04 09:19  </td><td align="right"> 1.9G</td><td align="right"> Smaller subset of original graph data with detail information</td></tr>
-  <!-- <tr><td valign="top"><img src="./icons/tar.gif" alt="[   ]"></td><td><a href="Riskware.tar.gz">APKFeatures.csv</a></td><td align="right">2024-03-01 11:18  </td><td align="right"> 16G</td><td  align="right"> All app-level features </td></tr> -->
-  <!-- <tr><td valign="top"><img src="./icons/tar.gif" alt="[   ]"></td><td><a href="SMS.tar.gz">SMS.tar.gz</a></td><td align="right">2024-03-01 11:18  </td><td align="right">1.2G</td><td>&nbsp;</td></tr> -->
-     <tr><th colspan="5"><hr></th></tr>
-  </tbody></table>
-  <!-- <address>Apache/2.4.41 (Ubuntu) Server at 205.174.165.80 Port 80</address> -->
-  
-  </body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <title>Your Name</title> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        html, body {
+            height: 100%;
+			padding-top: 56px;
+			overflow: auto;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+        .content {
+            flex: 1;
+        }
+        .bg-dark {
+            background-color: #343a40 !important;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <!-- <a class="navbar-brand" href="#">Your Name</a> -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">ABOUT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#properties">DATA PROPERTIES</a>
+                    </li>
+					<li class="nav-item">
+                        <a class="nav-link" href="#Download">DOWNLOAD</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container content">
+		<section id="about">
+            <h2>About Large Engagement Network</h2>
+            <div class="mb-4">
+                <!-- <h5>Background</h5> -->
+                <p>Social media users and inauthentic accounts, such as bots, may coordinate in promoting their topics. Such topics may give the impression that they are organically popular among the public, even though they are astroturfing campaigns that are centrally managed. It is challenging to predict if a topic is organic or a coordinated campaign due to a reliable lack of ground truth. </p>            </div>
+            <div class="mb-4">
+                <h5>Groundtruth</h5>
+                <p>We create a ground truth by detecting the campaigns promoted by ephemeral astroturfing attacks. These attacks push any topic to Twitter's trends list by employing bots that tweet in a coordinated manner within a short period and then immediately delete their tweets. We also manually curate a dataset of organic Twitter trends. We then create engagement networks out of these datasets and present them as graph classification datasets, where the task is to distinguish between campaigns and organic trends. Engagement networks consist of users as nodes and edges indicate interactions (retweets, replies and quotes) between users.</p>
+            </div>
+            <div class="mb-4">
+                <h5>New public dataset</h5>
+                <p>We release the data of 170 campaigns and 135 non-campaigns. Our graph dataset posits a challenge for large graph classification problems. Traditional graph classification datasets are small, with tens of nodes and hundreds of edges at most. In comparison to standard benchmarks, our graphs are at a larger scale. On average, each engagement network in our dataset contains ~11K nodes and ~23K edges. We show that state-of-the-art GNN methods give only mediocre results on our datasets, hence our datasets offer a new challenge for graph classification problem. We believe that our dataset will help advance the frontiers of graph classification techniques on large networks and provide an interesting use case in terms of distinguishing coordinated campaigns and organic trends.</p>
+            </div>
+        </section>
+
+        <section id="properties">
+            <h2>Dataset Properties</h2>
+			<p> The dataset consists of graphs where the nodes denote users and the edges denote an action, 
+			which could either be retweet, reply or quote. The dataset as such comprises of 323 graphs with 184 campaign graphs
+			and 139 non-campaign graphs. Each graph consists of 11,769.23 nodes and 23,593.97 edges on an average. 
+			Campaign graphs consisting of 5,157.43 nodes and 16,006.74 edges on an average and non-campaign graphs comprise of 
+			33,765 edges 20,632 nodes and 33,765 edges. The average degree of a campaign graph is 8.64 and the average degree of 
+			non-campaign graphs is 2.84.
+
+			The graphs are classified as either campaign or non-campaign graphs, with each of them also sub categorized into labels 
+			based on the type of campaign and non-campaign graph that they are. In campaign graphs, we have the following labels:
+			 Politics, Reform, News, Finance, Cult, Entertainment and Common. In non-campaign graphs, we have, News, Sports, Fest, 
+			 Internal, Common, entertainment, Announced campaign and Sports Campaign. 
+			 Here we summarize the properties of our datasets:
+			 <br> <br>
+			</p>
+
+            <style type="text/css">
+				.tg  {border-collapse:collapse;border-spacing:0;}
+				.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+				  overflow:hidden;padding:10px 5px;word-break:normal;}
+				.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+				  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+				.tg .tg-0thz{border-color:inherit;font-weight:bold;text-align:left;vertical-align:bottom}
+				.tg .tg-j6zm{font-weight:bold;text-align:left;vertical-align:bottom}
+				.tg .tg-7zrl{text-align:left;vertical-align:bottom}
+				</style>
+				<table class="tg"><thead>
+				  <tr>
+					<th class="tg-0thz"><span style="font-weight:bold">Class</span></th>
+					<th class="tg-j6zm"><span style="font-weight:bold">Labels</span></th>
+					<th class="tg-j6zm"><span style="font-weight:bold">Avg #nodes</span></th>
+					<th class="tg-j6zm"><span style="font-weight:bold">Avg #edges</span></th>
+					<th class="tg-j6zm"><span style="font-weight:bold">Avg max core</span></th>
+					<th class="tg-j6zm"><span style="font-weight:bold">Avg degree</span></th>
+					<th class="tg-j6zm"><span style="font-weight:bold">Explanation</span></th>
+				  </tr></thead>
+				<tbody>
+				  <tr>
+					<td class="tg-7zrl">campaign</td>
+					<td class="tg-7zrl">politics</td>
+					<td class="tg-7zrl">6570.79 ± 8651.22</td>
+					<td class="tg-7zrl">10210.48 ± 14200.22</td>
+					<td class="tg-7zrl">10.08 ± 6.15</td>
+					<td class="tg-7zrl">3.25 ± 1.48</td>
+					<td class="tg-7zrl">political promotions, campaigns, slogans, misin...</td>
+				  </tr>
+				  <tr>
+					<td class="tg-7zrl">campaign</td>
+					<td class="tg-7zrl">reform</td>
+					<td class="tg-7zrl">1229.9 ± 2640.12</td>
+					<td class="tg-7zrl">25268.37 ± 140006.24</td>
+					<td class="tg-7zrl">39.13 ± 35.13</td>
+					<td class="tg-7zrl">18.55 ± 17.1</td>
+					<td class="tg-7zrl">people organized among each other to ask for po...</td>
+				  </tr>
+				  <tr>
+					<td class="tg-7zrl">campaign</td>
+					<td class="tg-7zrl">finance</td>
+					<td class="tg-7zrl">1802.79 ± 2459.31</td>
+					<td class="tg-7zrl">2334.86 ± 2655.96</td>
+					<td class="tg-7zrl">7.21 ± 3.53</td>
+					<td class="tg-7zrl">3.09 ± 1.42</td>
+					<td class="tg-7zrl">mostly cryptocurrency, a few advertisements tha...</td>
+				  </tr>
+				  <tr>
+					<td class="tg-7zrl">campaign</td>
+					<td class="tg-7zrl">cult</td>
+					<td class="tg-7zrl">2303.83 ± 3050.62</td>
+					<td class="tg-7zrl">3431.0 ± 4440.13</td>
+					<td class="tg-7zrl">9.83 ± 0.41</td>
+					<td class="tg-7zrl">3.25 ± 0.62</td>
+					<td class="tg-7zrl">slogans that are sourced from a famous cult tha...</td>
+				  </tr>
+				  <tr>
+					<td class="tg-7zrl">campaign</td>
+					<td class="tg-7zrl">noise</td>
+					<td class="tg-7zrl">12180.22 ± 21311.44</td>
+					<td class="tg-7zrl">10882.67 ± 18571.66</td>
+					<td class="tg-7zrl">5.11 ± 2.57</td>
+					<td class="tg-7zrl">2.2 ± 0.69</td>
+					<td class="tg-7zrl">crypto or spam activity that I could not identi...</td>
+				  </tr>
+				  <tr>
+					<td class="tg-7zrl">campaign</td>
+					<td class="tg-7zrl">news</td>
+					<td class="tg-7zrl">10368.52 ± 11889.84</td>
+					<td class="tg-7zrl">15582.16 ± 21226.65</td>
+					<td class="tg-7zrl">9.0 ± 5.79</td>
+					<td class="tg-7zrl">2.73 ± 0.94</td>
+					<td class="tg-7zrl">external (but political) news that are pumped u...</td>
+				  </tr>
+				  <tr>
+					<td class="tg-7zrl">campaign</td>
+					<td class="tg-7zrl">entertainment</td>
+					<td class="tg-7zrl">2237.0 ± 1808.67</td>
+					<td class="tg-7zrl">48767.67 ± 72169.86</td>
+					<td class="tg-7zrl">41.67 ± 33.38</td>
+					<td class="tg-7zrl">28.46 ± 29.54</td>
+					<td class="tg-7zrl">a few weak celebrity promoting herself, may ignore</td>
+				  </tr>
+				  <tr>
+					<td class="tg-7zrl">campaign</td>
+					<td class="tg-7zrl">common</td>
+					<td class="tg-7zrl">5919.33 ± 3534.72</td>
+					<td class="tg-7zrl">7066.0 ± 3689.52</td>
+					<td class="tg-7zrl">8.67 ± 9.81</td>
+					<td class="tg-7zrl">2.61 ± 1.56</td>
+					<td class="tg-7zrl">common substrings that are botted for some reas...</td>
+				  </tr>
+				  <tr>
+					<td class="tg-7zrl">campaign</td>
+					<td class="tg-7zrl">falsepositive</td>
+					<td class="tg-7zrl">38116.0 ± nan</td>
+					<td class="tg-7zrl">53284.0 ± nan</td>
+					<td class="tg-7zrl">8.0 ± nan</td>
+					<td class="tg-7zrl">2.8 ± nan</td>
+					<td class="tg-7zrl">classification error - please ignore</td>
+				  </tr>
+				  <tr>
+					<td class="tg-7zrl">noncampaign</td>
+					<td class="tg-7zrl">reform</td>
+					<td class="tg-7zrl">4924.0 ± nan</td>
+					<td class="tg-7zrl">6064.0 ± nan</td>
+					<td class="tg-7zrl">5.0 ± nan</td>
+					<td class="tg-7zrl">2.46 ± nan</td>
+					<td class="tg-7zrl">Series([], )</td>
+				  </tr>
+				  <tr>
+					<td class="tg-7zrl">noncampaign</td>
+					<td class="tg-7zrl">noise</td>
+					<td class="tg-7zrl">5873.5 ± 5841.41</td>
+					<td class="tg-7zrl">7731.0 ± 8441.44</td>
+					<td class="tg-7zrl">11.0 ± 1.41</td>
+					<td class="tg-7zrl">2.38 ± 0.51</td>
+					<td class="tg-7zrl">these are mistakes, please ignore</td>
+				  </tr>
+				  <tr>
+					<td class="tg-7zrl">noncampaign</td>
+					<td class="tg-7zrl">news</td>
+					<td class="tg-7zrl">24834.67 ± 20423.57</td>
+					<td class="tg-7zrl">43201.81 ± 43209.27</td>
+					<td class="tg-7zrl">11.35 ± 5.59</td>
+					<td class="tg-7zrl">3.09 ± 0.76</td>
+					<td class="tg-7zrl">events that are popular due to some external ev...</td>
+				  </tr>
+				  <tr>
+					<td class="tg-7zrl">noncampaign</td>
+					<td class="tg-7zrl">entertainment</td>
+					<td class="tg-7zrl">7289.14 ± 6244.79</td>
+					<td class="tg-7zrl">12578.57 ± 14944.04</td>
+					<td class="tg-7zrl">11.43 ± 8.96</td>
+					<td class="tg-7zrl">2.94 ± 0.76</td>
+					<td class="tg-7zrl">popular tv shows or youtube programs</td>
+				  </tr>
+				  <tr>
+					<td class="tg-7zrl">noncampaign</td>
+					<td class="tg-7zrl">common</td>
+					<td class="tg-7zrl">17079.4 ± 20662.21</td>
+					<td class="tg-7zrl">24869.3 ± 33496.05</td>
+					<td class="tg-7zrl">8.6 ± 6.7</td>
+					<td class="tg-7zrl">2.54 ± 0.52</td>
+					<td class="tg-7zrl">common substrings that can be popular due to pe...</td>
+				  </tr>
+				  <tr>
+					<td class="tg-7zrl">noncampaign</td>
+					<td class="tg-7zrl">falsepositive</td>
+					<td class="tg-7zrl">436.0 ± nan</td>
+					<td class="tg-7zrl">544.0 ± nan</td>
+					<td class="tg-7zrl">5.0 ± nan</td>
+					<td class="tg-7zrl">2.5 ± nan</td>
+					<td class="tg-7zrl">one trend both in noncampaigns and campaigns, p...</td>
+				  </tr>
+				  <tr>
+					<td class="tg-7zrl">noncampaign</td>
+					<td class="tg-7zrl">sports</td>
+					<td class="tg-7zrl">9530.23 ± 14943.3</td>
+					<td class="tg-7zrl">12948.33 ± 20781.69</td>
+					<td class="tg-7zrl">8.1 ± 4.92</td>
+					<td class="tg-7zrl">2.4 ± 0.48</td>
+					<td class="tg-7zrl">popular sports events that people independently...</td>
+				  </tr>
+				  <tr>
+					<td class="tg-7zrl">noncampaign</td>
+					<td class="tg-7zrl">fest</td>
+					<td class="tg-7zrl">35466.59 ± 34896.99</td>
+					<td class="tg-7zrl">55947.76 ± 62700.28</td>
+					<td class="tg-7zrl">13.18 ± 8.65</td>
+					<td class="tg-7zrl">2.84 ± 0.62</td>
+					<td class="tg-7zrl">festivals, holidays, special days, commemoratio...</td>
+				  </tr>
+				  <tr>
+					<td class="tg-7zrl">noncampaign</td>
+					<td class="tg-7zrl">sports_announced_campaign</td>
+					<td class="tg-7zrl">3654.33 ± 912.95</td>
+					<td class="tg-7zrl">5534.0 ± 1596.13</td>
+					<td class="tg-7zrl">7.67 ± 1.15</td>
+					<td class="tg-7zrl">3.02 ± 0.19</td>
+					<td class="tg-7zrl">hashtags that are launched by sports team. peop...</td>
+				  </tr>
+				  <tr>
+					<td class="tg-7zrl">noncampaign</td>
+					<td class="tg-7zrl">internal</td>
+					<td class="tg-7zrl">33061.55 ± 32449.56</td>
+					<td class="tg-7zrl">54442.27 ± 65284.15</td>
+					<td class="tg-7zrl">10.18 ± 5.17</td>
+					<td class="tg-7zrl">2.85 ± 0.77</td>
+					<td class="tg-7zrl">events that got popular due to internal Twitter...</td>
+				  </tr>
+				  <tr>
+					<td class="tg-7zrl">noncampaign</td>
+					<td class="tg-7zrl">announced_campaign</td>
+					<td class="tg-7zrl">13382.0 ± 8834.03</td>
+					<td class="tg-7zrl">24817.5 ± 17417.84</td>
+					<td class="tg-7zrl">19.0 ± 11.02</td>
+					<td class="tg-7zrl">3.81 ± 1.13</td>
+					<td class="tg-7zrl">popular topics that are actually campaigns laun...</td>
+				  </tr>
+				</tbody></table>
+				
+				 
+					
+            <!-- <div class="mb-4">
+                <h3>Hobbies and Interests</h3>
+                <p>Share some of your personal hobbies and interests outside of your professional work.</p>
+            </div> -->
+        
+			</section>
+
+        <section id="Download" style="margin-top: 20px;">
+			<div class="mb-5">
+				<h2>Download Now</h2>
+				43 GB of graph data. Please download the data from <a href="download_page.html"> here.</a>
+
+			</div>
+            
+        </section>
+    </div>
+
+    <footer class="py-4 bg-dark text-white-50">
+        <div class="container text-center">
+            <!-- <small>&copy; 2024 Your Name. All Rights Reserved.</small> -->
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
