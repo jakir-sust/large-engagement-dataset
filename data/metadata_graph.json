@@ -1,0 +1,17 @@
+{
+  "name": "Large Engagement Networks for Classifying Coordinated Campaigns and Organic Twitter Trends graph data",
+  "description": "A dataset containing engagement networks for classifiying coordinated campaigns on Twitter containing graph data that can be loaded using networkx",
+  "dataFormat": "JSON",
+  "feature": [
+    {
+      "name": "node_attr",
+      "dataType": "List",
+      "description": "List of node attributes"
+    },
+    {
+      "name": "edge_attr",
+      "dataType": "List",
+      "description": "List of edge attributes"
+    }
+  ]
+}
